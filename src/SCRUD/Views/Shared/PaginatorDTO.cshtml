@@ -1,0 +1,17 @@
+﻿@*
+	/*
+		Created By Gene Kochanowsky
+	*/
+*@
+@model SCRUD.Models.SearchDTO
+
+@Html.HiddenFor(model => model.Page)
+@Html.HiddenFor(model => model.recsPerPage)
+@Html.HiddenFor(model => model.PagesPerGroup)
+@Html.HiddenFor(model => model.recCount)
+@Html.HiddenFor(model => model.sort)
+@Html.HiddenFor(model => model.sortDir)
+@Html.HiddenFor(model => model.FormView)
+@Html.HiddenFor(model => model.FormID)
+@Html.HiddenFor(model => model.ResultView)
+@Html.HiddenFor(model => model.entireView)

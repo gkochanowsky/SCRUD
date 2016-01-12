@@ -1,0 +1,51 @@
+@*
+	/*
+		Created By Gene Kochanowsky
+	*/
+*@
+@model SCRUD.Models.Person
+
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" onclick="return CloseDialog('@Model.formView');">&times;</button>
+			<h2 style="color:red"><span class="glyphicon glyphicon-erase"> Delete Person</span></h2>
+		</div>
+		<div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+		<div class="modal-body">
+			<h3>Are you sure you want to delete this?</h3>
+			<div>
+				<dl class="dl-horizontal">
+					<dt>@Html.DisplayNameFor(model => model.DoB)</dt>
+					<dd>@Html.DisplayFor(model => model.DoB)</dd>
+					<dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+					<dd>@Html.DisplayFor(model => model.FirstName)</dd>
+					<dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+					<dd>@Html.DisplayFor(model => model.LastName)</dd>
+					<dt>@Html.DisplayNameFor(model => model.GenderID)</dt>
+					<dd>@Html.DisplayFor(model => model.Gender.Code)</dd>
+				</dl>
+
+				@{
+					string formID = Model.formView + "-frm";
+					string funcDelete = "Delete_Person_" + Model.formView.Replace("-", "_");
+				}
+				<div class="modal-footer">
+					<form id="@formID" name="@formID" asp-action="Delete">
+						<input type="hidden" asp-for="formView" />
+						<div class="form-actions no-color">
+							<input onclick="return @funcDelete (this);" type="button" value="Delete" class="btn btn-default pull-left" />
+							<input onclick="return CloseDialog('@Model.formView');" value="Cancel" type="button" class="btn btn-default pull-left" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	function @funcDelete (btn) {
+		return PostDialog('@Model.formView', '@formID');
+	}
+</script>

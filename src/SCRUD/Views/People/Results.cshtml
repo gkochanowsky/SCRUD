@@ -1,0 +1,44 @@
+@*
+	/*
+		Created By Gene Kochanowsky
+	*/
+*@
+@model SCRUD.Models.SearchDTO_Person
+@using SCRUD.Helpers
+@{ 
+	var p = new SCRUD.Models.Person();
+	var detailsAction = Url.Action("Details", new { id = "***", formView = Model.DialogView });
+	var createAction = Url.Action("CreateOrEdit", new { formView = Model.DialogView });
+	var editAction = Url.Action("CreateOrEdit", new { id = "***", formView = Model.DialogView });
+	var deleteAction = Url.Action("Delete", new { id = "***", formView = Model.DialogView });
+}
+<table class="table">
+    <tr>
+        <th>@Html.SearchSortResult(_ => p.FirstName, Model.FormID)</th>
+        <th>@Html.SearchSortResult(_ => p.LastName, Model.FormID)</th>
+        <th>@Html.SearchSortResult(_ => p.DoB, Model.FormID)</th>
+		<th>@Html.SearchSortResult(_ => p.GenderID, Model.FormID)</th>
+        <th><a class="link-default" onclick="return @Model.funcOpen (null, '@createAction');">Create</a></th>
+    </tr>
+    
+@foreach (var item in Model.results) {
+	<tr>
+		<td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+		<td>@Html.DisplayFor(modelItem => item.LastName)</td>
+		<td>@Html.DisplayFor(modelItem => item.DoB)</td>
+		<td>@Html.DisplayFor(modelItem => item.Gender.Code)</td>
+		<td>
+			<a class="link-default" onclick="return @Model.funcOpen ('@item.PersonId', '@editAction');">Edit</a> |
+			<a class="link-default" onclick="return @Model.funcOpen ('@item.PersonId', '@detailsAction');">Details</a> |
+			<a class="link-default" onclick="return @Model.funcOpen ('@item.PersonId', '@deleteAction');">Delete</a>
+		</td>
+	</tr>
+}
+</table>
+<script>
+	function  @Model.funcOpen (id, url)
+	{
+		return OpenDialog('@Model.DialogView', url.replace("***", id));
+	}
+</script>
+

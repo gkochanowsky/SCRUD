@@ -1,0 +1,18 @@
+﻿@*
+	/*
+		Created By Gene Kochanowsky
+	*/
+*@
+@model SCRUD.Models.SearchDTO_Person
+
+@if (Model.results != null)
+{
+	<div>
+		<h3 style="margin-bottom:5px;">Search Results</h3>
+		@Html.Partial("Paginator", Model)
+		<hr style="margin:0" />
+		@Html.Partial("Results", Model)
+		<hr style="margin:0" />
+		@Html.Partial("Paginator", Model)
+	</div>
+}

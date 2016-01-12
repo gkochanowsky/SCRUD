@@ -1,0 +1,71 @@
+﻿@*
+	/*
+		Created By Gene Kochanowsky
+	*/
+*@
+@inject SCRUD.Models.SelectLists SL
+@model SCRUD.Models.SearchDTO_Person
+
+<form id="@Model.FormID" name="@Model.FormID" asp-action="Search" asp-controller="People">
+	@Html.Partial("PaginatorDTO", Model)
+	<div class="form-horizontal">
+		<h3>Search People</h3>
+		<hr />
+		<div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+		<div class="row">
+
+			<div class="col-md-6 form-group">
+				<label asp-for="DoB_From" class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<input asp-for="DoB_From" class="form-control" />
+				</div>
+			</div>
+			<div class="col-md-6 form-group">
+				<label asp-for="DoB_To" class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<input asp-for="DoB_To" class="form-control" />
+				</div>
+			</div>
+
+		</div>
+	
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label asp-for="FirstName" class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<input asp-for="FirstName" class="form-control" />
+				</div>
+			</div>
+			<div class="col-md-6 form-group">
+				<label asp-for="LastName" class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<input asp-for="LastName" class="form-control" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 form-group">
+				<label asp-for="GenderID" class="col-md-4 control-label"></label>
+				<div class="col-md-8">
+					<select asp-for="GenderID" asp-items="SL.Gender(Model.GenderID)" class="form-control">
+						<option value=""></option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="button" onclick="return LoadSearchResults('@Model.Page', '@Model.FormID');" value="Search" class="btn btn-default" />
+				<input type="reset" value="Reset" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+</form>
+
+<div id="@Model.ResultView">
+	@if (Model.results != null)
+	{
+		@Html.Partial("SearchResults", Model)
+	}
+</div>
