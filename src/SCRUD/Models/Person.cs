@@ -14,17 +14,17 @@ namespace SCRUD.Models
     {
 		public const string FirstName_Display = "First Name";
 		public const string LastName_Display = "Last Name";
-		public const string DoB_Display = "Birth Date";
+		public const string DoB_Display = "Birthday";
 		public const string GenderID_Display = "Gender";
 
 		public int PersonId { get; set; }
-		[Display(Name = Person.FirstName_Display)]
+		[Required, Display(Name = Person.FirstName_Display)]
 		public string FirstName { get; set; }
-		[Display(Name = Person.LastName_Display)]
+		[Required, Display(Name = Person.LastName_Display)]
 		public string LastName { get; set; }
-		[Display(Name = Person.DoB_Display), DataType(DataType.Date)]
+		[Required, Display(Name = Person.DoB_Display), DataType(DataType.Date)]
 		public DateTime DoB { get; set; }
-		[Display(Name = Person.GenderID_Display)]
+		[Required, Display(Name = Person.GenderID_Display)]
 		public int GenderID { get; set; }
 
 		public virtual Gender Gender { get; set; }

@@ -7,6 +7,7 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+		<link href="~/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment names="Staging,Production">
@@ -49,11 +50,14 @@
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-
 		<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
 		<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-
+		<script src="~/lib/moment/min/moment.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="~/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="~/js/search.js"></script>
+		<script src="~/js/dialog.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -67,10 +71,18 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+	<script type="text/javascript">
+		$(function () {
+			hookupDTP();
+		});
 
-	<script src="~/js/search.js"></script>
-	<script src="~/js/dialog.js"></script>
-
+		function hookupDTP() {
+			$(".datetimepicker").datetimepicker();
+			$(".datepicker").datetimepicker({
+				format: "MM/DD/YYYY"
+			});
+		}
+	</script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

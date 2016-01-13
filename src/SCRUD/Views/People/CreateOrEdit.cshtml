@@ -16,44 +16,47 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" onclick="return CloseDialog('@Model.formView');">&times;</button>
-			<h2 style="color:blue"><span class="glyphicon glyphicon-edit"></span> @headerStr Received</h2>
+			<h2 style="color:blue"><span class="glyphicon glyphicon-edit"></span> @headerStr Person</h2>
 		</div>
 		<div class="modal-body">
-			<form asp-action="Create">
+			<div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+			<form id="@formID" name="@formID" asp-action="CreateOrEdit">
+				<input type="hidden" asp-for="PersonId" />
+				<input type="hidden" asp-for="formView" />
+				<input type="hidden" asp-for="funcRefresh" />
 				<div class="form-horizontal">
-					<h4>Person</h4>
-					<hr />
-					<div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+
 					<div class="form-group">
-						<label asp-for="DoB" class="col-md-2 control-label"></label>
-						<div class="col-md-10">
-							<input asp-for="DoB" class="form-control" />
+						<label asp-for="DoB" class="col-md-4 control-label"></label>
+						<div class="col-md-8">
+							<editor asp-for="DoB" class="form-control" />
 							<span asp-validation-for="DoB" class="text-danger" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label asp-for="FirstName" class="col-md-2 control-label"></label>
-						<div class="col-md-10">
-							<input asp-for="FirstName" class="form-control" />
+						<label asp-for="FirstName" class="col-md-4 control-label"></label>
+						<div class="col-md-8">
+							<editor asp-for="FirstName" class="form-control" />
 							<span asp-validation-for="FirstName" class="text-danger" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label asp-for="GenderID" class="col-md-2 control-label"></label>
-						<div class="col-md-10">
-							<select asp-for="GenderID" class="form-control"></select>
-						</div>
-					</div>
-					<div class="form-group">
-						<label asp-for="LastName" class="col-md-2 control-label"></label>
-						<div class="col-md-10">
-							<input asp-for="LastName" class="form-control" />
+						<label asp-for="LastName" class="col-md-4 control-label"></label>
+						<div class="col-md-8">
+							<editor asp-for="LastName" class="form-control" />
 							<span asp-validation-for="LastName" class="text-danger" />
 						</div>
+					</div>					<div class="form-group">
+						<label asp-for="GenderID" class="col-md-4 control-label"></label>
+						<div class="col-md-8">
+							<select asp-for="GenderID" asp-items="@SL.Gender(Model.GenderID)" class="form-control"></select>
+						</div>
 					</div>
+
 					<div class="form-group">
-						<div class="col-md-offset-2 col-md-10">
-							<input type="submit" value="Create" class="btn btn-default" />
+						<div class="col-md-offset-4 col-md-8">
+							<input type="button" onclick="return @funcSave (this)" value="Save" class="btn btn-default pull-left" />
+							<input type="button" onclick="return CloseDialog('@Model.formView');" value="Cancel" class="btn btn-default pull-left" style="margin-left:20px" />
 						</div>
 					</div>
 				</div>
@@ -64,6 +67,6 @@
 
 <script>
 		function @funcSave (btn) {
-			PostDialog('@Model.formView', '@formID')
+			return PostDialog('@Model.formView', '@formID', function() { btn.disabled = true; }, null, function() { btn.disabled = false; });
 		}
 </script>

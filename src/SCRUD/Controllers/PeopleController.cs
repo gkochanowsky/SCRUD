@@ -78,6 +78,8 @@ namespace SCRUD.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult CreateOrEdit(Person dto)
 		{
+			ModelState.AddModelError(string.Empty, "Not so fast!");
+
 			if (ModelState.IsValid && _db.CreateOrEdit(dto, this.ActionContext))
 				return Content("SUCCESS");
 

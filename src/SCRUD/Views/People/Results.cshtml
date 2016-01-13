@@ -38,7 +38,7 @@
 <script>
 	function  @Model.funcOpen (id, url)
 	{
-		return OpenDialog('@Model.DialogView', url.replace("***", id));
+		return OpenDialog('@Model.DialogView', url.replace("***", id), function () { hookupDTP(); });
 	}
 </script>
 

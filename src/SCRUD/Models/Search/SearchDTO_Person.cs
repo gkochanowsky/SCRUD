@@ -36,9 +36,9 @@ namespace SCRUD.Models
 		public string FirstName { get; set; }
 		[Display(Name = "Last Name")]
 		public string LastName { get; set; }
-		[Display(Name = "From DoB")]
+		[Display(Name = "From DoB"), DataType(DataType.Date)]
 		public DateTime? DoB_From { get; set; }
-		[Display(Name = "To DoB")]
+		[Display(Name = "To DoB"), DataType(DataType.Date)]
 		public DateTime? DoB_To { get; set; }
 		[Display(Name = "Gender")]
 		public int? GenderID { get; set; }
