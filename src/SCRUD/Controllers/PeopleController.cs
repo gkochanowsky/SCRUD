@@ -59,7 +59,7 @@ namespace SCRUD.Controllers
 			return PartialView(dto);
 		}
 
-		public IActionResult CreateOrEdit(int? id = null, string formView = null)
+		public IActionResult CreateOrEdit(int? id = null, string formView = null, string funcRefresh = null)
 		{
 			Person dto;
 			if (id.HasValue)
@@ -67,6 +67,7 @@ namespace SCRUD.Controllers
 				dto = _db.Find(id.GetValueOrDefault());
 				if (dto == null) return HttpNotFound();
 				dto.formView = formView;
+				dto.funcRefresh = funcRefresh;
 			}
 			else
 				dto = _db.New(formView, null);
@@ -78,8 +79,6 @@ namespace SCRUD.Controllers
 		[ValidateAntiForgeryToken]
 		public IActionResult CreateOrEdit(Person dto)
 		{
-			ModelState.AddModelError(string.Empty, "Not so fast!");
-
 			if (ModelState.IsValid && _db.CreateOrEdit(dto, this.ActionContext))
 				return Content("SUCCESS");
 

@@ -1,0 +1,8 @@
+﻿2016/01/13 ---
+==================================================================================
+1. Search Refresh
+	Two kinds:
+	- Page reload (on create)
+	- Row only (on update)
+
+2. Toggle

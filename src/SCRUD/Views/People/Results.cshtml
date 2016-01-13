@@ -40,5 +40,10 @@
 	{
 		return OpenDialog('@Model.DialogView', url.replace("***", id), function () { hookupDTP(); });
 	}
+
+	function @Model.funcRefresh ()
+	{
+		return LoadSearchResults(null, '@Model.FormID');
+	}
 </script>
 
