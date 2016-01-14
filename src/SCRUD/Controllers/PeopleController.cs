@@ -1,5 +1,7 @@
 /*
 	Created By Gene Kochanowsky	
+
+	All I ask is that you say who you stole this from.
 */
 using System.Linq;
 using System.Security.Principal;
@@ -87,25 +89,27 @@ namespace SCRUD.Controllers
 
 		// GET: People/Delete/5
 		[ActionName("Delete")]
-        public IActionResult Delete(int id, string formView)
+        public IActionResult Delete(int id, string formView, string funcRefresh)
         {
             Person person = _db.Find(id);
             if (person == null)
                 return HttpNotFound();
 			person.formView = formView;
+			person.funcRefresh = funcRefresh;
             return PartialView(person);
         }
 
         // POST: People/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id, string formView)
+        public IActionResult DeleteConfirmed(int id, string formView, string funcRefresh)
         {
 			if (_db.Delete(id))
 				return Content("SUCCESS");
 
 			var dto = _db.Find(id);
 			dto.formView = formView;
+			dto.funcRefresh = funcRefresh;
 			return PartialView("Delete", dto);
 		}
     }

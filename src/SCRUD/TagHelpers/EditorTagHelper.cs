@@ -1,6 +1,8 @@
 ﻿/*
 	Created by Gene Kochanowsky
 
+	All I ask is that you say who you stole this from.
+
 	Desc: This is a partial attempt to emulate some of the Editor Template functionality that is 
 			present in Html Helpers as driven by the metadata decorating the model.
 

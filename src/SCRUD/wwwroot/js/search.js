@@ -1,5 +1,7 @@
 ﻿/*
 	Created By Gene Kochanowsky	
+
+	All I ask is that you say who you stole this from.
 */
 function LoadSearchResults(page, formID, entireView, afterFunc) {
 	var form = $("#" + formID);
