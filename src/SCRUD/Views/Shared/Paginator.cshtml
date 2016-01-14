@@ -7,6 +7,7 @@
 
 @{
 	double statusLen = ((Math.Log10(Model.recCount)) * 3 + 23) / 2;
+	double pageLen = Math.Log10(Model.PageLast) + 1.5;
 }
 
 @if (Model.recCount > Model.recsPerPage)
@@ -48,9 +49,9 @@
 		{
 			@if (Model.Page != i)
 			{
-				<li><a class="link-pointer" onclick="LoadSearchResults('@i', '@Model.FormID'); return false;">@i</a></li> }
+				<li><a style="width:@(pageLen)em;text-align:center" class="link-pointer" onclick="LoadSearchResults('@i', '@Model.FormID'); return false;">@i</a></li> }
 			else {
-				<li class="display link-default"><span style="color:gray"><strong>@i</strong></span></li> }
+				<li class="display link-default"><span style="color:gray;width:@(pageLen)em;text-align:center"><strong>@i</strong></span></li> }
 		}
 
 		@if (Model.Page < Model.PageLast)
