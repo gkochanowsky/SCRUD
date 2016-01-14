@@ -8,9 +8,9 @@
 @{ 
 	var p = new SCRUD.Models.Person();
 	var detailsAction = Url.Action("Details", new { id = "***", formView = Model.DialogView });
-	var createAction = Url.Action("CreateOrEdit", new { formView = Model.DialogView });
-	var editAction = Url.Action("CreateOrEdit", new { id = "***", formView = Model.DialogView });
-	var deleteAction = Url.Action("Delete", new { id = "***", formView = Model.DialogView });
+	var createAction = Url.Action("CreateOrEdit", new { formView = Model.DialogView, funcRefresh = Model.funcRefresh });
+	var editAction = Url.Action("CreateOrEdit", new { id = "***", formView = Model.DialogView, funcRefresh = Model.funcRefresh });
+	var deleteAction = Url.Action("Delete", new { id = "***", formView = Model.DialogView, funcRefresh = Model.funcRefresh });
 }
 <table class="table">
     <tr>

@@ -33,11 +33,11 @@ namespace SCRUD.TagHelpers
 			base.Process(context, output);
 
 			var p = base.For;
-
 			string v = null;
 			string c = "";
 			string t = "";
 			bool isNullable = false;
+
 			if (p.ModelExplorer.ModelType.Name.Contains("Nullable"))
 			{
 				var u = Nullable.GetUnderlyingType(p.ModelExplorer.ModelType);
@@ -49,9 +49,9 @@ namespace SCRUD.TagHelpers
 
 			switch (t)
 			{
-				case "DateTime":    // Change format
+				case "DateTime":    // Change format, css class, and blank value if value is default.
 
-					DateTime m = isNullable ? ((DateTime?) p.Model).GetValueOrDefault() : (DateTime)p.Model;
+					DateTime m = isNullable ? ((DateTime?)p.Model).GetValueOrDefault() : (DateTime)p.Model;
 
 					switch (p.Metadata.DataTypeName)
 					{
