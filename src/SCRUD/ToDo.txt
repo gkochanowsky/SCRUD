@@ -1,8 +1,10 @@
 ﻿2016/01/13 ---
 ==================================================================================
 1. Search Refresh
-	Two kinds:
-	- Page reload (on create)
-	- Row only (on update)
+	- Search reload
 
 2. Toggle
+
+3. Scaffolder
+
+4. Nuget package

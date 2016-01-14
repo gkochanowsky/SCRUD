@@ -72,7 +72,7 @@ namespace SCRUD.Controllers
 				dto.funcRefresh = funcRefresh;
 			}
 			else
-				dto = _db.New(formView, null);
+				dto = _db.New(formView, funcRefresh);
 
 			return PartialView(dto);
 		}

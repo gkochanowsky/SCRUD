@@ -66,7 +66,7 @@ namespace SCRUD.TagHelpers
 							c = "datetimepicker";
 							break;
 					}
-					output.Attributes["type"] = "text";
+					output.Attributes["type"] = "text"; // To fix problems with overly helpful browsers.
 					v = (m != default(DateTime) ? m.ToString(v) : "");
 					break;
 			}

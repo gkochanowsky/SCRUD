@@ -44,7 +44,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2016 - SCRUD - Gene Kochanowsky</p>
+            <p>&copy; 2016 - SCRUD - By Gene Kochanowsky</p>
         </footer>
     </div>
 
@@ -71,18 +71,6 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-	<script type="text/javascript">
-		$(function () {
-			hookupDTP();
-		});
-
-		function hookupDTP() {
-			$(".datetimepicker").datetimepicker();
-			$(".datepicker").datetimepicker({
-				format: "MM/DD/YYYY"
-			});
-		}
-	</script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -69,6 +69,10 @@
 
 <script>
 		function @funcSave (btn) {
-			return PostDialog('@Model.formView', '@formID', function() { btn.disabled = true; }, null, function() { btn.disabled = false; });
+			return PostDialog('@Model.formView' 
+								,'@formID' 
+								,function() { btn.disabled = true; }
+								,function() { btn.disabled = false; } 
+								@if (Model.funcRefresh != null) { <text>, function() { @Model.funcRefresh (); }</text> });
 		}
 </script>

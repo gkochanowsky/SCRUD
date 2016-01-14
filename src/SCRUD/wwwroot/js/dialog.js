@@ -34,6 +34,7 @@ function PostDialog(viewID, formID, preFunc, failFunc, successFunc, skipVal) {
 		}
 		else {
 			view.html(result);
+			if (Boolean(failFunc)) failFunc();
 		}
 	}).fail(function (jqXHR, textStatus, errorThrown) {
 		OnFailure(jqXHR, textStatus, errorThrown);
