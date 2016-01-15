@@ -16,6 +16,7 @@
 }
 <table class="table">
     <tr>
+		<th></th>
         <th>@Html.SearchSortResult(_ => p.FirstName, Model.FormID)</th>
         <th>@Html.SearchSortResult(_ => p.LastName, Model.FormID)</th>
         <th>@Html.SearchSortResult(_ => p.DoB, Model.FormID)</th>
@@ -25,6 +26,7 @@
     
 @foreach (var item in Model.results) {
 	<tr>
+		<td style="width:1.5em"><a onclick="alert('click');"><span class="glyphicon glyphicon-chevron-right"></span></a></td>
 		<td>@Html.DisplayFor(modelItem => item.FirstName)</td>
 		<td>@Html.DisplayFor(modelItem => item.LastName)</td>
 		<td>@Html.DisplayFor(modelItem => item.DoB)</td>
