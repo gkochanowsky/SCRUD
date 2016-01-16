@@ -48,7 +48,7 @@ namespace SCRUD.Controllers
 		}
 
 		// GET: People/Details/5
-		public IActionResult Details(int? id, string formView = null)
+		public IActionResult Details(int? id, string formView = null, bool isModal = true)
         {
 			if (id == null || formView == null)
 				return HttpNotFound();
@@ -58,6 +58,7 @@ namespace SCRUD.Controllers
 				return HttpNotFound();
 
 			dto.formView = formView;
+			dto.isModal = isModal;
 			return PartialView(dto);
 		}
 

@@ -33,5 +33,7 @@ namespace SCRUD.Models
 		public string formView { get; set; }
 		[NotMapped]
 		public string funcRefresh { get; set; }
+		[NotMapped]
+		public bool isModal { get; set; }
 	}
 }

@@ -24,9 +24,13 @@
         <th><a class="link-default" onclick="return @Model.funcOpen (null, '@createAction');">Create</a></th>
     </tr>
     
-@foreach (var item in Model.results) {
-	<tr>
-		<td style="width:1.5em"><a onclick="alert('click');"><span class="glyphicon glyphicon-chevron-right"></span></a></td>
+@foreach (var item in Model.results)
+{
+	string rowID = Model.FormView + "-" + item.PersonId;
+	string toggleID = rowID + "-tgl";
+	string tglAction = Url.Action("Details", new { id = item.PersonId, formView = rowID, isModal = false });
+	<tr id="@rowID">
+		<td style="width:1.5em"><a id="@toggleID" title="Show/Hide" onclick="return Toggle('@toggleID', '@rowID', '@tglAction');" style="text-decoration:none" class="link-pointer glyphicon glyphicon-chevron-right"></a></td>
 		<td>@Html.DisplayFor(modelItem => item.FirstName)</td>
 		<td>@Html.DisplayFor(modelItem => item.LastName)</td>
 		<td>@Html.DisplayFor(modelItem => item.DoB)</td>

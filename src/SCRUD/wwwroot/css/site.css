@@ -47,8 +47,11 @@ textarea {
 
 .link-default {
 	cursor:default;
+	text-decoration:none;
 }
 
 .link-pointer { 
 	cursor:pointer; 
+	text-decoration:none;
 }
+

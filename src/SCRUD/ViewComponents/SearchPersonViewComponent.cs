@@ -26,9 +26,9 @@ namespace SCRUD.ViewComponents
 			this.rep = new Repository_Person(dbContext, controllerContext: this);
 		}
 
-		public IViewComponentResult Invoke()
+		public IViewComponentResult Invoke(string formView)
 		{
-			var dto = new SearchDTO_Person();
+			var dto = new SearchDTO_Person() { FormView = formView };
 			return View(rep.Search(dto));
 		}
 	}

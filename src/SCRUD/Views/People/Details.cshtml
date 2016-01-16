@@ -7,13 +7,31 @@
 *@
 @model SCRUD.Models.Person
 
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" onclick="return CloseDialog('@Model.formView');">&times;</button>
-			<h4 style="color:red"><span class="glyphicon glyphicon-book"></span> Person Details</h4>
-		</div>
-		<div class="modal-body">
+@{
+	string modal_hdr = Model.isModal ? @"
+	<div class='modal-dialog'>
+		<div class='modal-content'>
+			<div class='modal-header'>
+				<button type='button' class='close' onclick=""return CloseDialog('" + Model.formView + @"');"">&times;</button>
+				<h4 style='color:red'><span class='glyphicon glyphicon-book'></span> Person Details</h4>
+			</div>
+			<div class='modal-body'>
+" : "";
+
+	string modal_ftr = Model.isModal ? @"
+						</div>
+						<div class='modal-footer'>
+							<button type = 'button' class='btn btn-default pull-left' onclick=""return CloseDialog('" + Model.formView + @"');""><span class='glyphicon glyphicon-remove'></span> Cancel</button>
+							<p>Not a bonehead? <a href='#' > Sign Up</a></p>
+						</div>
+					</div>
+				</div>
+" : "";
+}
+
+@* Some kind of bug, would not let me split the HTML div. Sometimes a framework can be too helpful. But injecting raw HTML works.*@
+@Html.Raw(modal_hdr)
+
 			<div>
 				<dl class="dl-horizontal">
 					<dt>@Html.DisplayNameFor(model => model.DoB)</dt>
@@ -26,10 +44,5 @@
 					<dd>@Html.DisplayFor(model => model.Gender.Code)</dd>
 				</dl>
 			</div>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default pull-left" onclick="return CloseDialog('@Model.formView');"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-			<p>Not a bonehead? <a href="#">Sign Up</a></p>
-		</div>
-	</div>
-</div>
+
+@Html.Raw(modal_ftr)

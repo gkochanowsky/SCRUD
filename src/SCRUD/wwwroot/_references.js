@@ -3,6 +3,7 @@
 /// <reference path="js/dialog.js" />
 /// <reference path="js/search.js" />
 /// <reference path="js/site.js" />
+/// <reference path="js/toggle.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
