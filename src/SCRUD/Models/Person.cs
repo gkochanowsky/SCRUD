@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace SCRUD.Models
 {
-    public class Person
-    {
+    public class Person : ISCRUDview
+	{
 		public const string FirstName_Display = "First Name";
 		public const string LastName_Display = "Last Name";
 		public const string DoB_Display = "Birthday";

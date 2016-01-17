@@ -36,6 +36,7 @@
 					<form id="@formID" name="@formID" asp-action="Delete">
 						<input type="hidden" asp-for="formView" />
 						<input type="hidden" asp-for="funcRefresh" />
+						<input type="hidden" asp-for="isModal" />
 						<div class="form-actions no-color">
 							<input onclick="return @funcDelete (this);" type="button" value="Delete" class="btn btn-default pull-left" />
 							<input onclick="return CloseDialog('@Model.formView');" value="Cancel" type="button" class="btn btn-default pull-left" />

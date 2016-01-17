@@ -1,0 +1,21 @@
+﻿@model SCRUD.Models.ISCRUDview
+
+@{ 
+	string action = ViewContext.RouteData.Values["action"].ToString();
+}
+
+<div class="modal-dialog">
+	<div class="modal-content">
+		@*<div class="modal-header">
+			<button type="button" class="close" onclick="return CloseDialog('@Model.formView');">&times;</button>
+			<h4 style="color:red"><span class="glyphicon glyphicon-book"></span> Person @action</h4>
+		</div>*@
+		<div class="modal-body">
+			@Html.Partial(action, Model)
+		</div>
+		@*<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left" onclick="return CloseDialog('@Model.formView');"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+			<p>Not a bonehead? <a href="#"> Sign Up</a></p>
+		</div>*@
+	</div>
+</div>

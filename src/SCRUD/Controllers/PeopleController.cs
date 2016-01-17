@@ -59,7 +59,7 @@ namespace SCRUD.Controllers
 
 			dto.formView = formView;
 			dto.isModal = isModal;
-			return PartialView(dto);
+			return PartialView(isModal ? "SCRUDmodal": "Details", dto);
 		}
 
 		public IActionResult CreateOrEdit(int? id = null, string formView = null, string funcRefresh = null)

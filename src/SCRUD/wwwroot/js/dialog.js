@@ -10,6 +10,7 @@ function OpenDialog(viewID, url, hookupEvents) {
 	$.get(url, null, function (result) {
 		if (!Boolean(result)) return;
 		view.html(result);
+		FixModal(view);
 		FixValidation(view);
 		if (Boolean(hookupEvents)) hookupEvents();
 		view.modal("show");
@@ -67,6 +68,17 @@ function FixValidation(view) {
 		$.validator.unobtrusive.parse('#' + formID);
 	});
 }
+
+function FixModal(view) {
+	var m = view.find('.modal-body');
+	var hdr = m.find('.modal-header');
+	var ftr = m.find('.modal-footer');
+	if (ftr.length > 0)
+		ftr.insertAfter(m);
+	if (hdr.length > 0)
+		hdr.insertBefore(m);
+}
+
 
 function OnFailure(xhr, status, error) {
 	if (confirm("View failure " + error + " in a new browser window?")) {

@@ -20,7 +20,7 @@ namespace SCRUD.Models
 			recsPerPage = 10;
 		}
 
-		public List<Person> results { get; set; }
+		public IEnumerable<Person> results { get; set; }
 
 		/// <summary>
 		/// Field ordering functions used for paginated column sorting.
