@@ -5,6 +5,7 @@
 */
 using System.Linq;
 using System.Security.Principal;
+using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
@@ -12,7 +13,9 @@ using SCRUD.Models;
 
 namespace SCRUD.Controllers
 {
-    public class PeopleController : Controller, IControllerContext
+	[Authorize("Testing")]
+//	[Authorize(Roles = "role-i-am-in")]
+	public class PeopleController : Controller, IControllerContext
     {
         private SCRUDContext _context;
 		private IRepository_Person _db;
@@ -25,7 +28,6 @@ namespace SCRUD.Controllers
 			_db = new Repository_Person(context, this);
         }
 
-        // GET: People
         public IActionResult Index()
         {
 			return View();
@@ -41,6 +43,7 @@ namespace SCRUD.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult Search(SearchDTO_Person search)
 		{
 			ModelState.Clear();

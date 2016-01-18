@@ -9,6 +9,7 @@
 @model SCRUD.Models.SearchDTO_Person
 
 <form id="@Model.FormID" name="@Model.FormID" asp-action="Search" asp-controller="People">
+	@*@Html.AntiForgeryToken()*@
 	@Html.Partial("PaginatorDTO", Model)
 	<div class="form-horizontal">
 		<h3>Search People</h3>

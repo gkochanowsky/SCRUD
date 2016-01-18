@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Data.Entity;
 using SCRUD.Models;
 using System.IO;
+using Microsoft.AspNet.Authorization;
+using Microsoft.AspNet.Mvc.Filters;
 
 namespace SCRUD
 {
@@ -31,8 +33,24 @@ namespace SCRUD
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddMvc();
+			var defaultPolicy = new AuthorizationPolicyBuilder()
+										.RequireAuthenticatedUser()
+										.RequireRole("role-i-am-in")
+										.Build();
+
+			// Add framework services.
+			services.AddMvc(setup =>
+			{
+				setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+			});
+
+			services.AddAuthorization(options => {
+				options.AddPolicy("Testing", policy =>
+				{
+					policy.RequireRole("role-i-am-in");
+				});
+			});
+
 			services.AddScoped<Models.SelectLists>();
 
 			var connection = Configuration["Data:DefaultConnection:ConnectionString"];

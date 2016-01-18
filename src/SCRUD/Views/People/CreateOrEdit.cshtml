@@ -23,6 +23,7 @@
 		<div class="modal-body">
 			<div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
 			<form id="@formID" name="@formID" asp-action="CreateOrEdit">
+				@*@Html.AntiForgeryToken()*@
 				<input type="hidden" asp-for="PersonId" />
 				<input type="hidden" asp-for="formView" />
 				<input type="hidden" asp-for="funcRefresh" />

@@ -59,7 +59,7 @@
 		@if (Model.Page < Model.PageLast)
 		// Next page pointer
 		{
-			<li><a class="link-pointer" onclick="LoadSearchResults('@Model.PageNext', '@Model.FormID'); return false;"><span class="glyphicon glyphicon-step-forward"></span></a></li>
+			<li><a title="Next Page" class="link-pointer" onclick="LoadSearchResults('@Model.PageNext', '@Model.FormID'); return false;"><span class="glyphicon glyphicon-step-forward"></span></a></li>
 		}
 		else {
 			<li class="display link-default"><span style="color:gray; cursor:default"><span class="glyphicon glyphicon-step-forward"></span></span></li>
@@ -70,7 +70,7 @@
 		{
 			@if (Model.GroupCurr < Model.GroupCount)
 			{
-				<li><a class="link-default" onclick="return LoadSearchResults('@Model.GroupPageNext', '@Model.FormID');"><span class="glyphicon glyphicon-forward"></span></a></li>
+				<li><a title="Next @Model.PagesPerGroup Pages" class="link-default" onclick="return LoadSearchResults('@Model.GroupPageNext', '@Model.FormID');"><span class="glyphicon glyphicon-forward"></span></a></li>
 			}
 			else {
 				<li class="display link-default"><span style="color:gray; cursor:default"><span class="glyphicon glyphicon-forward"></span></span></li>
@@ -80,7 +80,7 @@
 		@if (Model.Page < Model.PageLast)
 		// Last Page
 		{
-			<li><a class="link-pointer" onclick="LoadSearchResults('@Model.PageLast', '@Model.FormID'); return false;"><span class="glyphicon glyphicon-fast-forward"></span></a></li>
+			<li><a title="Last Page" class="link-pointer" onclick="LoadSearchResults('@Model.PageLast', '@Model.FormID'); return false;"><span class="glyphicon glyphicon-fast-forward"></span></a></li>
 		}
 		else {
 			<li class="display link-default"><span style="color:gray; cursor:default"><span class="glyphicon glyphicon-fast-forward"></span></span></li>

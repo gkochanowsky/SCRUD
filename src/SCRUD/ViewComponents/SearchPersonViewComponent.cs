@@ -10,9 +10,12 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using SCRUD.Models;
 using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Authorization;
 
 namespace SCRUD.ViewComponents
 {
+	[Authorize("Testing")]
+//	[Authorize(Roles = "role-i-am-in")]
 	public class SearchPersonViewComponent : ViewComponent, IControllerContext
 	{
 		private SCRUDContext _dbContext;
