@@ -205,6 +205,26 @@
           "lib/net451/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -259,6 +279,24 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -546,6 +584,26 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Identity.dll": {}
         }
       },
       "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -2115,6 +2173,20 @@
           "lib/dotnet5.4/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -2158,6 +2230,21 @@
         },
         "runtime": {
           "lib/dotnet5.4/Microsoft.AspNet.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-rc1-final",
+          "System.Runtime.Extensions": "4.0.11-beta-23516",
+          "System.Security.Cryptography.Algorithms": "4.0.0-beta-23516",
+          "System.Text.Encoding.Extensions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -2416,6 +2503,28 @@
         },
         "runtime": {
           "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-rc1-final",
+          "System.ComponentModel": "4.0.1-beta-23516",
+          "System.Diagnostics.Debug": "4.0.11-beta-23516",
+          "System.Diagnostics.Tools": "4.0.1-beta-23516",
+          "System.Globalization.Extensions": "4.0.1-beta-23516",
+          "System.Linq.Expressions": "4.0.11-beta-23516",
+          "System.Linq.Queryable": "4.0.1-beta-23516",
+          "System.Text.Encoding": "4.0.11-beta-23516",
+          "System.Text.RegularExpressions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Identity.dll": {}
         }
       },
       "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -4771,6 +4880,26 @@
           "lib/net451/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -4825,6 +4954,24 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -5112,6 +5259,26 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Identity.dll": {}
         }
       },
       "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -6731,6 +6898,26 @@
           "lib/net451/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -6785,6 +6972,24 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -7072,6 +7277,26 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Identity.dll": {}
         }
       },
       "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -8644,6 +8869,20 @@
           "lib/dotnet5.4/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -8687,6 +8926,21 @@
         },
         "runtime": {
           "lib/dotnet5.4/Microsoft.AspNet.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-rc1-final",
+          "System.Runtime.Extensions": "4.0.11-beta-23516",
+          "System.Security.Cryptography.Algorithms": "4.0.0-beta-23516",
+          "System.Text.Encoding.Extensions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -8945,6 +9199,28 @@
         },
         "runtime": {
           "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-rc1-final",
+          "System.ComponentModel": "4.0.1-beta-23516",
+          "System.Diagnostics.Debug": "4.0.11-beta-23516",
+          "System.Diagnostics.Tools": "4.0.1-beta-23516",
+          "System.Globalization.Extensions": "4.0.1-beta-23516",
+          "System.Linq.Expressions": "4.0.11-beta-23516",
+          "System.Linq.Queryable": "4.0.1-beta-23516",
+          "System.Text.Encoding": "4.0.11-beta-23516",
+          "System.Text.RegularExpressions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Identity.dll": {}
         }
       },
       "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -11760,6 +12036,20 @@
           "lib/dotnet5.4/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -11803,6 +12093,21 @@
         },
         "runtime": {
           "lib/dotnet5.4/Microsoft.AspNet.Cryptography.Internal.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-rc1-final",
+          "System.Runtime.Extensions": "4.0.11-beta-23516",
+          "System.Security.Cryptography.Algorithms": "4.0.0-beta-23516",
+          "System.Text.Encoding.Extensions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -12061,6 +12366,28 @@
         },
         "runtime": {
           "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-rc1-final",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-rc1-final",
+          "System.ComponentModel": "4.0.1-beta-23516",
+          "System.Diagnostics.Debug": "4.0.11-beta-23516",
+          "System.Diagnostics.Tools": "4.0.1-beta-23516",
+          "System.Globalization.Extensions": "4.0.1-beta-23516",
+          "System.Linq.Expressions": "4.0.11-beta-23516",
+          "System.Linq.Queryable": "4.0.1-beta-23516",
+          "System.Text.Encoding": "4.0.11-beta-23516",
+          "System.Text.RegularExpressions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Identity.dll": {}
         }
       },
       "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -14874,6 +15201,20 @@
         "Microsoft.AspNet.Authentication.nuspec"
       ]
     },
+    "Microsoft.AspNet.Authentication.Cookies/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "vjeSG8Z5i5Kqo1nC7wW1BO+YMk+gs/AVVJlmyF7EGgiUBtAAPkrgjxSabQqvFhPgpEFledUQ6gkhKXgr4WrMtw==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Authentication.Cookies.xml",
+        "lib/net451/Microsoft.AspNet.Authentication.Cookies.dll",
+        "lib/net451/Microsoft.AspNet.Authentication.Cookies.xml",
+        "Microsoft.AspNet.Authentication.Cookies.1.0.0-rc1-final.nupkg",
+        "Microsoft.AspNet.Authentication.Cookies.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Authentication.Cookies.nuspec"
+      ]
+    },
     "Microsoft.AspNet.Authorization/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -14914,6 +15255,20 @@
         "Microsoft.AspNet.Cryptography.Internal.1.0.0-rc1-final.nupkg",
         "Microsoft.AspNet.Cryptography.Internal.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.AspNet.Cryptography.Internal.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "a0HOA+i0gEY5SIzJZX4QXuj+hY6C7NT3t60EwreWYPAy/rruoxlkarU8H9oHwtatT2/FjC8kdMNQS72y1I/5KQ==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
+        "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
+        "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
+        "Microsoft.AspNet.Cryptography.KeyDerivation.1.0.0-rc1-final.nupkg",
+        "Microsoft.AspNet.Cryptography.KeyDerivation.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Cryptography.KeyDerivation.nuspec"
       ]
     },
     "Microsoft.AspNet.DataProtection/1.0.0-rc1-final": {
@@ -15114,6 +15469,20 @@
         "Microsoft.AspNet.Http.Features.1.0.0-rc1-final.nupkg",
         "Microsoft.AspNet.Http.Features.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.AspNet.Http.Features.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Identity/3.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "ACPci5zUktgGFqdZ48dWexty24lROTEW/MK3LxIDe88zssLiqMhHrIndp4G/1vafmUfL+9lTw7oda6GRD53cEg==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.AspNet.Identity.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Identity.xml",
+        "lib/net451/Microsoft.AspNet.Identity.dll",
+        "lib/net451/Microsoft.AspNet.Identity.xml",
+        "Microsoft.AspNet.Identity.3.0.0-rc1-final.nupkg",
+        "Microsoft.AspNet.Identity.3.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Identity.nuspec"
       ]
     },
     "Microsoft.AspNet.IISPlatformHandler/1.0.0-rc1-final": {
@@ -20422,8 +20791,11 @@
       "EntityFramework.Commands >= 7.0.0-rc1-final",
       "EntityFramework.MicrosoftSqlServer >= 7.0.0-rc1-final",
       "EntityFramework.MicrosoftSqlServer.Design >= 7.0.0-rc1-final",
+      "Microsoft.AspNet.Authorization >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Authentication >= 1.0.0-rc1-final",
+      "Microsoft.AspNet.Authentication.Cookies >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Diagnostics >= 1.0.0-rc1-final",
+      "Microsoft.AspNet.Identity >= 3.0.0-rc1-final",
       "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-rc1-final",

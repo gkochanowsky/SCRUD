@@ -35,7 +35,7 @@ namespace SCRUD
         {
 			var defaultPolicy = new AuthorizationPolicyBuilder()
 										.RequireAuthenticatedUser()
-										.RequireRole("role-i-am-in")
+										//.RequireRole("role-i-am-in")
 										.Build();
 
 			// Add framework services.
@@ -44,12 +44,13 @@ namespace SCRUD
 				setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
 			});
 
-			services.AddAuthorization(options => {
-				options.AddPolicy("Testing", policy =>
-				{
-					policy.RequireRole("role-i-am-in");
-				});
-			});
+			//services.AddAuthorization(options =>
+			//{
+			//	options.AddPolicy("Testing", policy =>
+			//	{
+			//		policy.RequireRole("role-i-am-in");
+			//	});
+			//});
 
 			services.AddScoped<Models.SelectLists>();
 
@@ -62,6 +63,7 @@ namespace SCRUD
 			services.AddEntityFramework()
 				.AddSqlServer()
 				.AddDbContext<SCRUDContext>(options => options.UseSqlServer(connection));
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,6 +85,8 @@ namespace SCRUD
             app.UseIISPlatformHandler();
 
             app.UseStaticFiles();
+
+//			app.UseIdentity();
 
             app.UseMvc(routes =>
             {

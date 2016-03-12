@@ -14,7 +14,8 @@ using Microsoft.AspNet.Authorization;
 
 namespace SCRUD.ViewComponents
 {
-	[Authorize("Testing")]
+//	[Authorize]
+//	[Authorize(Policy = "Testing")]
 //	[Authorize(Roles = "role-i-am-in")]
 	public class SearchPersonViewComponent : ViewComponent, IControllerContext
 	{

@@ -13,7 +13,8 @@ using SCRUD.Models;
 
 namespace SCRUD.Controllers
 {
-	[Authorize("Testing")]
+//	[Authorize]
+//	[Authorize(Policy = "Testing")]
 //	[Authorize(Roles = "role-i-am-in")]
 	public class PeopleController : Controller, IControllerContext
     {
